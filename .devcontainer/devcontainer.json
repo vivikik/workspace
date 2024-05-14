@@ -1,0 +1,16 @@
+{
+    "name": "my rag2",                      // VScodeがコンテナに接続したときのタイトルを自由に設定
+    "dockerComposeFile": "docker-compose.yml",  // docker-conpose.ymlファイルを指定
+    "service": "web",                           // docker-conpose.ymlファイル内に記載したサービス名（webサーバー）を指定
+    "workspaceFolder": "/workspace/web/script",    // VScode接続時に開くフォルダを指定
+    "customizations": {
+        "vscode": {
+            "extensions": [                     // コンテナに接続するVScodeにインストールする拡張機能を記載　
+                "ms-python.python"              // python
+            ],
+            "settings": {                       // VScodeの設定を記載
+                "files.autoSave": "afterDelay"  // ファイルのオートセーブ
+            }
+        }
+    }
+}

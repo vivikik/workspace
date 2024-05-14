@@ -1,0 +1,10 @@
+version: "0.3"
+services:                                     # サービスを定義するための決まり文句
+  web:                                        # webサーバー用のコンテナを定義
+    image: python:myrag2                      # イメージのREPOSITORY名:TAG名を指定
+    build: ./web                              # Dockerfileの相対パス
+    container_name: python-myrag2              # コンテナ名
+    working_dir: /workspace/web/              # 作業ディレクトリを指定
+    volumes:                                  # マウントするファイルを指定する
+      - ../web:/workspace/web                 # ローカルPCのwebをコンテナのworkspace/webにマウント
+    tty: true                                 # コンテナを起動し続けるための定義
